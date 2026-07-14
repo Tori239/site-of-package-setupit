@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetupIt - HOME</title>
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #050b14 0%, #0c1524 100%);
+            background-attachment: fixed;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        .intro {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 100px 10% 40px 10%;
+            text-align: left;
+            color: white;
+            background: radial-gradient(circle at 50% 100%, #ffffff 0%, #fffaaa 25%, #2a3a4f 100%);
+        }
+
+        .intro h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+
+            background: linear-gradient(45deg, #ffffff 0%, #c9d1d9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .intro h2 {
+            font-size: 1.5rem;
+            color: #e2e8f0;
+            font-weight: 400;
+            margin: 0 0 40px 0;
+            max-width: 600px;
+        }
+
+        .intro h3 {
+            font-size: 1.2rem;
+            color: #c9d1d9;
+            margin-top: 30px;
+        }
+
+        menu {
+            text-align: left;
+            display: block;
+            color: #cbd5e1;
+            list-style-type: square;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        code {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #58a6ff;
+            padding: 3px 6px;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        }
+
+
+        #FIFA2026 {
+            background: linear-gradient(125deg, #ffffff 0%, #6b6f7a 100%);
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 40px 0 40px 10%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+
+        #FIFA2026 h2 {
+            color: #0f172a;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        #FIFA2026 ol li {
+            color: #0f172a;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding-bottom: 15px;
+        }
+        #FIFA2026 ol li:last-child {
+            padding-bottom: 0px;
+        }
+
+        #FIFA2026 code {
+            background-color: rgba(15, 23, 42, 0.08);
+            color: #0f172a;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dustContainer = document.createElement("div");
+            dustContainer.style.position = "fixed";
+            dustContainer.style.top = "0";
+            dustContainer.style.left = "0";
+            dustContainer.style.width = "100vw";
+            dustContainer.style.height = "100vh";
+            dustContainer.style.pointerEvents = "none";
+            dustContainer.style.zIndex = "9999";
+            dustContainer.style.overflow = "hidden";
+            document.body.appendChild(dustContainer);
+
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const star = document.createElement("div");
+
+
+                star.style.position = "absolute";
+                star.style.width = (Math.random() + 2) + "px";
+                star.style.height = star.style.width;
+                star.style.backgroundColor = "#FFFFFF";
+                star.style.borderRadius = "50%";
+                star.style.opacity = Math.random() * 0.7 + 0.3;
+
+
+                star.style.left = (Math.random() * 100) + "vw";
+                star.style.top = (Math.random() * 100) + "vh";
+
+                dustContainer.appendChild(star);
+
+
+                let speedX = (Math.random() - 0.5) * 1.5;
+                let speedY = (Math.random() - 0.5) * 1.5;
+
+
+                function animateStar() {
+                    let currentLeft = parseFloat(star.style.left);
+                    let currentTop = parseFloat(star.style.top);
+
+
+                    let nextLeft = currentLeft + (speedX / window.innerWidth) * 100;
+                    let nextTop = currentTop + (speedY / window.innerHeight) * 100;
+
+
+                    if (nextLeft < 0) nextLeft = 100;
+                    if (nextLeft > 100) nextLeft = 0;
+                    if (nextTop < 0) nextTop = 100;
+                    if (nextTop > 100) nextTop = 0;
+
+                    star.style.left = nextLeft + "vw";
+                    star.style.top = nextTop + "vh";
+
+
+                    requestAnimationFrame(animateStar);
+                }
+
+                // Детонируем полёт частицы в памяти
+                animateStar();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const dustContainer = document.createElement("div");
+            dustContainer.style.position = "fixed";
+            dustContainer.style.top = "0";
+            dustContainer.style.left = "0";
+            dustContainer.style.width = "100vw";
+            dustContainer.style.height = "100vh";
+            dustContainer.style.pointerEvents = "none";
+            dustContainer.style.zIndex = "9999";
+            dustContainer.style.overflow = "hidden";
+            document.body.appendChild(dustContainer);
+
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const star = document.createElement("div");
+
+
+                star.style.position = "absolute";
+                star.style.width = (Math.random() * 100 + 2) + "px";
+                star.style.height = star.style.width;
+                star.style.backgroundColor = "#FFFFFF";
+                star.style.borderRadius = "50%";
+                star.style.opacity = Math.random() * 0.7 + 0.3;
+
+
+                star.style.left = (Math.random() * 100) + "vw";
+                star.style.top = (Math.random() * 100) + "vh";
+
+                dustContainer.appendChild(star);
+
+
+                let speedX = (Math.random() - 0.5) * 0.01;
+                let speedY = (Math.random() - 0.5) * 0.01;
+
+
+                function animateStar() {
+                    let currentLeft = parseFloat(star.style.left);
+                    let currentTop = parseFloat(star.style.top);
+
+
+                    let nextLeft = currentLeft + (speedX / window.innerWidth) * 100;
+                    let nextTop = currentTop + (speedY / window.innerHeight) * 100;
+
+
+                    if (nextLeft < 0) nextLeft = 100;
+                    if (nextLeft > 100) nextLeft = 0;
+                    if (nextTop < 0) nextTop = 100;
+                    if (nextTop > 100) nextTop = 0;
+
+                    star.style.left = nextLeft + "vw";
+                    star.style.top = nextTop + "vh";
+
+
+                    requestAnimationFrame(animateStar);
+                }
+
+
+                animateStar();
+            }
+        });
+    </script>
+
+</head>
+<body aria-live="polite">
+
+<div class="intro">
+    <h1>Welcome to SetupIt!</h1>
+    <h2>This is a site of PyPI package "SetupIt".</h2>
+
+
+    <!-- Инжектируем список наших автономных ракет в семантический контейнер -->
+    <h3>Our Built-in Environment Commands:</h3>
+    <menu>
+        <li>🚀 <code>setupit</code> — Interactive stealth token deployment mode.</li>
+        <li>📂 <code>setupit-json</code> — Background automated JSON profile parser.</li>
+        <li>📦 <code>setupit-pip</code> — Advanced user-space Pip package manager wrapper.</li>
+        <li>📁 <code>setupit-init</code> — Legacy file and directory layout engine.</li>
+        <li>🏗️ <code>setupit-setup</code> — Dynamic enterprise repository scaffolding loop.</li>
+    </menu>
+
+    <h3>View actual PyPI Site of SetupIt:
+        <a href="https://pypi.org/project/setupit" target="_blank">setupit</a>
+    </h3>
+</div>
+
+<div id="FIFA2026">
+    <h2>How to install and start using SetupIt:</h2>
+    <ol>
+        <li>Install package: <code>pip install setupit</code>.</li>
+        <li>Write in Bash/Zsh/PowerShell/CMD/...: <code>setupit</code>.</li>
+        <li>When prompted for a token, enter your PyPI token (characters hidden).</li>
+        <li>When prompted for a master key, please create a master key (for more information on key length, see the link above) and write it down (characters are also hidden).</li>
+    </ol>
+    <h3 style="color: #0f172a; margin-top: 20px; font-size: 1.1rem; font-weight: bold;">
+        There is currently no GitHub repository for the package.
+
+    </h3>
+</div>
+
+
+<footer style="text-align: left; padding: 40px 10%; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 60px;">
+    <address style="font-style: normal; color: #8b949e; font-size: 0.9rem; line-height: 1.5;">
+        Site and package developed with precision by To_ri239 <br>
+        © 2026 To_ri239. Some rights reserved.
+    </address>
+</footer>
+
+</body>
+</html>
